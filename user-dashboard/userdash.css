@@ -1,0 +1,149 @@
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+	margin: 0;
+	padding: 0;
+  }
+  
+  #dashboard {
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px; /* Space between sections */
+  }
+  
+  section {
+	background-color: white;
+	margin-bottom: 20px;
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s; /* Smooth hover effect */
+  }
+  
+  section:hover {
+	transform: translateY(-3px); /* Slight lift effect on hover */
+  }
+  
+  h3 {
+	margin-top: 0;
+	color: #048853; /* Main accent color */
+  }
+
+  #user-overview {
+	display: flex;
+	align-items: center; /* Center align items vertically */
+	background-color: #fff; /* White background */
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-image {
+	width: 80px; /* Set a width for the user image */
+	height: 80px; /* Set a height for the user image */
+	border-radius: 50%; /* Make the image circular */
+	margin-right: 15px; /* Space between image and text */
+  }
+
+  .overview-content {
+	display: flex; /* Use flexbox for layout */
+	align-items: center; /* Center align items vertically */
+  }
+  
+  #properties-container {
+	display: flex;
+	flex-direction: column; /* Align items in a column */
+	gap: 20px; /* Space between property cards */
+  }
+  
+  .property-card {
+	background-color: #fff; /* White background for property cards */
+	padding: 15px; /* Padding inside the cards */
+	border-radius: 5px; /* Rounded corners */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+	transition: transform 0.3s; /* Smooth transform on hover */
+  }
+  
+  .property-card:hover {
+	transform: scale(1.02); /* Slight zoom effect on hover */
+  }
+  
+  .property-card-content {
+	display: flex; /* Use flexbox for layout */
+	align-items: center; /* Align items vertically in the center */
+  }
+  
+  .property-image {
+	width: 150px; /* Fixed width for the image */
+	height: auto; /* Maintain aspect ratio */
+	border-radius: 5px; /* Rounded corners for images */
+	margin-right: 15px; /* Space between image and description */
+  }
+  
+  .property-description {
+	flex: 1; /* Allow description to take the remaining space */
+  }
+  
+  .property-description h4 {
+	margin: 10px 0 5px; /* Margin for headings */
+	color: #00985B; /* Set the heading color */
+  }
+  
+  .property-description p {
+	margin: 5px 0; /* Margin for paragraph texts */
+  }
+  
+  
+  #transactions-container ul {
+	padding: 0;
+	list-style-type: none; /* Remove default list styling */
+  }
+  
+  #transactions-container ul li {
+	background-color: #0fbd77; /* Light background for transaction items */
+	padding: 10px;
+	margin: 5px 0; /* Space between items */
+	border-radius: 5px; /* Rounded corners */
+	transition: background-color 0.3s; /* Smooth background color change */
+  }
+  
+  #transactions-container ul li:hover {
+	background-color: #00985B;; /* Light grey on hover */
+  }
+  
+  #notifications-container {
+	list-style: none; /* Remove default list styles */
+	padding: 0; /* Remove padding */
+  }
+  
+  #notifications-container li {
+	background-color: #fff; /* White background for notifications */
+	margin: 5px 0; /* Space between notifications */
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.3s; /* Smooth background color change */
+  }
+  
+  #notifications-container li:hover {
+	background-color: #dcdcdc; /* Light grey or silver grey on hover */
+  }
+  
+  button {
+	background-color: #00985B; /* Vibrant button color */
+	color: #fff;
+	border: none;
+	padding: 10px 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+  }
+  
+  button:hover {
+	background-color: #048853; /* Darker button color on hover */
+  }
+  

@@ -1,0 +1,237 @@
+/* General Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  }
+  
+  /* Body and General Styling */
+  body {
+	font-family: 'Arial', sans-serif;
+	line-height: 1.6;
+	background-color: #f4f4f4;
+	color: #333;
+  }
+  
+  /* Homify Header */
+  header {
+	background-color: #333;
+	color: #fff;
+	padding: 10px 0;
+	text-align: center;
+  }
+  
+  header h1 {
+	font-size: 2rem;
+	margin-bottom: 10px;
+  }
+  
+  header p {
+	font-size: 1.2rem;
+  }
+  
+  /* Homify Navbar */
+  .homify-nav {
+	display: flex;
+	justify-content: space-between;
+	background-color: #333;
+	padding: 10px;
+  }
+  
+  .homify-nav a {
+	color: white;
+	text-decoration: none;
+	padding: 10px 20px;
+	transition: background-color 0.3s ease; /* Smooth transition for highlight */
+  }
+  
+  .homify-nav a:hover {
+	background-color: #575757; /* Highlight on hover */
+  }
+  
+  /* Main Section Styling */
+  .main-section {
+	padding: 20px;
+  }
+  
+  /* Services Section */
+  .services {
+	padding: 20px;
+	background-color: #fff;
+	margin: 20px 0;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .services h2 {
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 1.5rem;
+  }
+  
+  .services-cardcontainer {
+	display: flex;
+	justify-content: space-around;
+	padding: 20px;
+  }
+  
+  .services-cardcontainer .card {
+	background-color: #f1f1f1;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease; /* Smooth transition for zoom */
+  }
+  
+  .services-cardcontainer .card:hover {
+	transform: scale(1.05); /* Zoom in on hover */
+  }
+  
+  .services-cardcontainer .card h3 {
+	text-align: center;
+	margin-bottom: 15px;
+  }
+  
+  .services-cardcontainer .card p {
+	text-align: center;
+  }
+  
+  /* Features Section */
+  .features {
+	padding: 20px;
+  }
+  
+  .features h2 {
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 1.5rem;
+  }
+  
+  .features-image {
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+  }
+  
+  .features-image img {
+	width: 100%;
+	transition: transform 0.5s ease-in-out;
+  }
+  
+  .features-image img.active {
+	display: block;
+  }
+  
+  .features-image img.inactive {
+	display: none;
+  }
+  
+  .features-image .arrow-left,
+  .features-image .arrow-right {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	padding: 10px;
+	cursor: pointer;
+	z-index: 2;
+  }
+  
+  .features-image .arrow-left {
+	left: 10px;
+  }
+  
+  .features-image .arrow-right {
+	right: 10px;
+  }
+  
+  /* Testimonials Section */
+  .testimonials {
+	padding: 20px;
+	background-color: #fff;
+	margin: 20px 0;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testimonials h2 {
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 1.5rem;
+  }
+  
+  .testimonials-container {
+	display: flex;
+	justify-content: space-around;
+  }
+  
+  .testimonials-container .testimonial-card {
+	background-color: #f1f1f1;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+	width: 30%;
+	text-align: center;
+  }
+  
+  .testimonials-container .testimonial-card p {
+	font-style: italic;
+  }
+  
+  .testimonials-container .testimonial-card h4 {
+	margin-top: 15px;
+	font-weight: bold;
+  }
+  
+  /* CTA Section */
+  .cta {
+	padding: 20px;
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	margin-top: 20px;
+	border-radius: 8px;
+  }
+  
+  .cta h2 {
+	margin-bottom: 10px;
+	font-size: 1.5rem;
+  }
+  
+  .cta p {
+	font-size: 1.2rem;
+  }
+  
+  /* Buttons */
+  button,
+  .homify-nav button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for button */
+  }
+  
+  button:hover,
+  .homify-nav button:hover {
+	background-color: #45a049; /* Darker green on hover */
+	transform: scale(1.05); /* Slight zoom in on hover */
+  }
+  
+  /* Footer Section */
+  footer {
+	background-color: #333;
+	color: white;
+	text-align: center;
+	padding: 20px 0;
+  }
+  
+  footer p {
+	margin: 0;
+  }
+  
