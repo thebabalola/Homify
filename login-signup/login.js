@@ -1,42 +1,21 @@
-const formTitle = document.getElementById('form-title');
-const authForm = document.getElementById('auth-form');
-const confirmPasswordGroup = document.getElementById('confirm-password-group');
-const toggleText = document.getElementById('toggle-text');
-const toggleLink = document.getElementById('toggle-link');
-const submitBtn = document.querySelector('.submit-btn');
-
-let isSignUp = false;
-
-toggleLink.addEventListener('click', (e) => {
+document.getElementById('signinForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  isSignUp = !isSignUp;
-  if (isSignUp) {
-    formTitle.textContent = 'Sign Up';
-    confirmPasswordGroup.classList.remove('hidden');
-    submitBtn.textContent = 'Sign Up';
-    toggleLink.textContent = 'Log in';
-    toggleText.firstChild.textContent = "Already have an account? ";
-  } else {
-    formTitle.textContent = 'Login';
-    confirmPasswordGroup.classList.add('hidden');
-    submitBtn.textContent = 'Login';
-    toggleLink.textContent = 'Sign up';
-    toggleText.firstChild.textContent = "Don't have an account? ";
-  }
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  // Here you would typically send this data to your server for authentication
+  console.log('Sign in data:', { email, password });
+
+  // Simulate successful sign in
+  alert('Sign in successful! Redirecting to dashboard...');
+  window.location.href = 'dashboard.html';
 });
 
-authForm.addEventListener('submit', (e) => {
+document.getElementById('forgotPassword').addEventListener('click', function(e) {
   e.preventDefault();
-  if (isSignUp) {
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirm-password').value;
-    if (password === confirmPassword) {
-      alert('Sign-up successful!');
-    } else {
-      alert('Passwords do not match.');
-    }
-  } else {
-    alert('Login successful!');
+  const email = prompt("Please enter your email address:");
+  if (email) {
+    // Here you would typically send a password reset email
+    alert(`Password reset link sent to ${email}`);
   }
 });
