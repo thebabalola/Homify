@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homify - Register</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #434242;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .form-wrapper {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      width: 400px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      text-align: center;
+      color: #00985B;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    input:focus, select:focus {
+      border-color: #048853;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      background-color: #00985B;
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #048853;
+    }
+
+    .message {
+      text-align: center;
+      margin-top: 20px;
+      color: #000;
+    }
+
+    .message a {
+      color: #00985B;
+      text-decoration: none;
+    }
+
+    .message a:hover {
+      text-decoration: underline;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      color: #434242;
+    }
+
+    .social-login {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .social-btn {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      margin: 0 5px;
+    }
+
+    .google-btn {
+      background-color: #db4437;
+      color: white;
+    }
+
+    .facebook-btn {
+      background-color: #4267B2;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-wrapper">
+      <h1>Create Your Homify Account</h1>
+      <form id="registerForm">
+        <div class="input-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="input-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div class="input-group">
+          <label for="role">Role</label>
+          <select id="role" name="role">
+            <option value="buyer">Buyer</option>
+            <option value="seller">Seller (Landowner)</option>
+            <option value="agent">Agent</option>
+          </select>
+        </div>
+        <button type="submit">Register</button>
+        <div class="social-login">
+          <button type="button" class="social-btn google-btn">Register with Google</button>
+          <button type="button" class="social-btn facebook-btn">Register with Facebook</button>
+        </div>
+        <p class="message">Already have an account? <a href="signin.html">Sign In</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const role = document.getElementById('role').value;
+
+      // Here you would typically send this data to your server
+      console.log('Registration data:', { name, email, password, role });
+
+      // Simulate successful registration
+      alert('Registration successful! Redirecting to dashboard...');
+      window.location.href = 'dashboard.html';
+    });
+
+    // Social login buttons (these would need to be connected to the respective APIs)
+    document.querySelector('.google-btn').addEventListener('click', function() {
+      alert('Google registration clicked. Implement Google OAuth here.');
+    });
+
+    document.querySelector('.facebook-btn').addEventListener('click', function() {
+      alert('Facebook registration clicked. Implement Facebook OAuth here.');
+    });
+  </script>
+</body>
+</html>
