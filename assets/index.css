@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
+/* ----- Base/Global style ----- */
 *,
 *::before,
 *::after {
@@ -18,6 +18,10 @@ ul {
     list-style: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     width: 100%;
     height: 100vh;
@@ -25,20 +29,16 @@ body{
 }
 
 .homify-container {
-    /* height: 100%; */
+    height: 100%; 
     width: 100%;
 }
 
+
+/* ----- Header Styles----- */
 .homify-firstsection {
     display: flex;
     flex-direction: column;
     background: linear-gradient(112.9deg, #048853 0.98%, rgba(0, 0, 0, 0.84) 165.36%);
-}
-
-.login {
-    background-color: #fff;
-    color: #00985B;
-    padding: 5px 10px;
 }
 
 .firstsection-background {
@@ -48,11 +48,11 @@ body{
     background-repeat: initial;
 }
 
-
+/* --- nav bar ---*/
 .homify-nav {
     display: flex;
     justify-content: space-between;
-    padding: 0 15px;
+    padding: 0 30px;
     align-items: center;
     position: fixed;
     top: 0;
@@ -63,17 +63,18 @@ body{
     z-index: 1000;
 }
 
+.logo{
+    height: 47px;
+    width: auto;
+}
+
 .first-nav > li, .second-nav > li  {
     font-family: Poppins;
 font-size: 16px;
 font-weight: 700;
 line-height: 24px;
 text-align: left;
-
-}
-.logo{
-    height: 47px;
-    width: auto;
+margin: 0 10px;
 }
 
 .first-nav > li > a, .second-nav > li > a  {
@@ -88,48 +89,45 @@ text-align: left;
     transform: translateY(-2px);
 }
 
+.reg {
+    background-color: transparent;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 2px;
+}
+.login {
+    background-color: #fff;
+    color: #00985B;
+    padding: 5px 10px;
+    border-radius: 2px;
+}
+
+.reg:hover, .login:hover {
+    /* background-color: #11d184; */
+    background-color: #f2fff3;
+    color: #00985B;
+}
+
+
+
+
+
 .button-pop {
     transform: scale(1.1);
     transition: transform 0.2s;
 }
 
-.navigate-options > p.active {
-    background-color: #00985B;
-    color: #FFFFFF;
-}
 
-/* Add hover effect for buttons */
 button:hover {
     opacity: 0.9;
     cursor: pointer;
 }
 
-/* Add hover effect for house filters */
-.house-filter:hover {
-    background-color: #00985B;
-    color: #FFFFFF;
-}
-
-.house-filter:hover > p {
-    color: #FFFFFF;
-}
-
-/* Add hover effect for load more */
-.loadmore > p:hover {
-    color: #00985B;
-    cursor: pointer;
-}
-
-/* Add hover effect for social media icons */
-.contact-image > img:hover {
-    opacity: 0.7;
-    cursor: pointer;
-}
-
-/* ----- Ending ----- */
 
 
 
+
+/* ----- Hero ----- */
 .homify-herosection {
     display: flex;
     flex-direction: column;
@@ -138,7 +136,7 @@ button:hover {
     background-position: center right;
     background-repeat: no-repeat;
     height: 600px;
-    padding: 10px 40px;
+    padding: 70px 40px;
     /* background-size: cover; */
 }
 
@@ -149,9 +147,7 @@ button:hover {
     line-height: 72px;
     text-align: left;
     margin-top: 50px;
-    
 }
-
 .homify-herosection > p {
     font-family: Poppins;
     font-size: 26px;
@@ -159,31 +155,29 @@ button:hover {
     line-height: 34px;
     text-align: left;
     margin-top: 20px;
-    
 }
-
 
 .hero-buttoncontainer {
     display: flex;
     margin-top: 30px;
-
 }
 
 .hero-button {
     background-color: #fff;
     padding: 10px 20px;
     border: 0;
+    border-radius: 5px;
 }
 
 
- /* Service section styling*/
+
+ /* Our Services Styles*/
 .homify-services{
     display: flex;
     flex-direction: column;
     background-color: #F3FFF4;
     justify-content: center;
     gap: 60px;
-
     padding: 100px 0;
 }
 
@@ -198,7 +192,6 @@ button:hover {
     line-height: 72px;
     text-align: center;
     color: #048853;
-
 }
 .services-header > h4{
     font-family: Poppins;
@@ -207,12 +200,10 @@ font-weight: 400;
 line-height: 27px;
 text-align: center;
 color: #000;
-
 }
 
 .services-cardcontainer{
     display: flex;
-    
     justify-content: space-around;
 }
 
@@ -226,9 +217,7 @@ color: #000;
     height: 300px;
     background-color: #FFFFFF;
     padding: 0 20px;
-
 }
-
 .services-card2{
     display: flex;
     flex-direction: column;
@@ -238,8 +227,6 @@ color: #000;
     width: 400px;
     height: 300px;
     padding: 0 20px;
-
-
 }
 
 .services-card > h3{
@@ -248,20 +235,17 @@ color: #000;
     font-weight: 600;
     line-height: 36px;
     text-align: center;
-    color: #00985B;
-    
+    color: #00985B;  
 }
-
 .services-card2 > h3{
     font-family: Poppins;
     font-size: 24px;
     font-weight: 600;
     line-height: 36px;
     text-align: center;
-    color: #fff;
- 
-    
+    color: #fff;  
 }
+
 .services-card > p{
     font-family: Poppins;
     font-size: 14px;
@@ -288,12 +272,14 @@ color: #000;
     justify-content: center;
     align-items: center;
 }
-
 .services-image > img {
     height: 40px;
     width: auto;
 }
 
+
+
+/* ----- Navigate ----- */
 .homify-navigate{
     display: flex;
     flex-direction: column; 
@@ -359,6 +345,11 @@ color: #fff;
    
 }
 
+.navigate-options > p.active {
+    background-color: #00985B;
+    color: #FFFFFF;
+}
+
 .homify-recommendation{
     display: flex;
     flex-direction: column; 
@@ -413,6 +404,11 @@ color: #fff;
 
 }
 
+.loadmore > p:hover {
+    color: #00985B;
+    cursor: pointer;
+}
+
 .house-filter {
     display: flex;
     align-items: center;
@@ -439,8 +435,15 @@ font-weight: 400;
 line-height: 27px;
 text-align: center;
 color: #00985B;
+}
 
+.house-filter:hover {
+    background-color: #00985B;
+    color: #FFFFFF;
+}
 
+.house-filter:hover > p {
+    color: #FFFFFF;
 }
 
 .recommendation-secondcontainer {
@@ -694,6 +697,11 @@ text-align: left;
 .contact-image > img {
     width: auto;
     height: 20px;
+}
+
+.contact-image > img:hover {
+    opacity: 0.7;
+    cursor: pointer;
 }
 
 .contact-questions {
