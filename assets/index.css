@@ -743,8 +743,40 @@ text-align: left;
 
 
 
-/*Mobile Responsiveness*/
+/* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
+    /* General styles */
+
+    *,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+}
+
+.homify-container {
+    height: 100%; 
+    width: 100%;
+}
+
+    
+    body {
+        font-size: 16px
+    }
+
+
+    /* Navigation */
     .homify-nav {
         flex-direction: column;
         height: auto;
@@ -752,27 +784,42 @@ text-align: left;
     }
 
     .first-nav, .second-nav {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 10px;
+        display: none;
     }
 
+    .mobile-menu-btn {
+        display: block;
+        align-self: flex-end;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    /* Hero Section */
     .homify-herosection {
-        padding: 40px 20px;
+        padding: 60px 20px;
         height: auto;
-        background-position: center;
+        text-align: center;
     }
 
     .homify-herosection > h1 {
         font-size: 32px;
-        line-height: 42px;
+        line-height: 1.2;
     }
 
     .homify-herosection > p {
         font-size: 18px;
-        line-height: 24px;
+        line-height: 1.5;
     }
 
+    .hero-buttoncontainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Services Section */
     .services-cardcontainer {
         flex-direction: column;
         align-items: center;
@@ -783,11 +830,17 @@ text-align: left;
         margin-bottom: 20px;
     }
 
+    /* Navigate Section */
     .navigate-options {
         flex-direction: column;
         align-items: center;
     }
 
+    .navigate-options > p {
+        margin-bottom: 10px;
+    }
+
+    /* Recommendation Section */
     .recommendation-searchcontaiiner {
         flex-direction: column;
         align-items: center;
@@ -799,33 +852,130 @@ text-align: left;
     }
 
     .recommendation-filter {
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .house-filter {
+        margin-bottom: 10px;
     }
 
     .recommendation-secondcontainer {
         grid-template-columns: 1fr;
     }
 
+    .recommendation-card {
+        width: 90%;
+        margin: 0 auto 20px;
+    }
+
+    /* Features Section */
+    .features-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .features-header > button {
+        margin-top: 20px;
+    }
+
     .features-image {
         flex-direction: column;
+        align-items: center;
     }
 
     .features-image > img {
         width: 90%;
         height: auto;
+        margin-bottom: 20px;
     }
 
+    /* Contact Section */
     .contact-darkbackground {
         grid-template-columns: 1fr;
     }
 
+    .first-contact, .contact-questions {
+        padding: 20px;
+    }
+
+    /* Footer */
     .footer {
         flex-direction: column;
         align-items: center;
+        text-align: center;
     }
 
     .first-footer {
         flex-direction: column;
     }
+
+    .footer-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-nav li {
+        margin: 5px 0;
+    }
 }
 
+/* Mobile Menu Styles */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #048853;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.mobile-menu.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.mobile-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.mobile-menu li {
+    margin: 20px 0;
+}
+
+.mobile-menu a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.mobile-menu .second-nav {
+    margin-top: 40px;
+}

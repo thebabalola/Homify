@@ -1,13 +1,43 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
-    const navBar = document.getElementById('nav-bar');
+    const navBar = document.querySelector('.homify-nav');
     const mobileMenuBtn = document.createElement('button');
-    mobileMenuBtn.textContent = '☰';
+    mobileMenuBtn.innerHTML = '☰';
     mobileMenuBtn.classList.add('mobile-menu-btn');
     navBar.prepend(mobileMenuBtn);
 
+    const mobileMenu = document.createElement('div');
+    mobileMenu.classList.add('mobile-menu');
+    mobileMenu.innerHTML = `
+        <button class="mobile-menu-close">✕</button>
+        <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="#features">FEATURES</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+        <ul class="second-nav">
+            <li class="reg"><a href="./register/register.html">REGISTER</a></li>
+            <li class="login"><a href="./login-signup/login.html">LOGIN</a></li>
+        </ul>
+    `;
+    document.body.appendChild(mobileMenu);
+
+    const mobileMenuClose = mobileMenu.querySelector('.mobile-menu-close');
+
     mobileMenuBtn.addEventListener('click', function() {
-        navBar.classList.toggle('mobile-menu-open');
+        mobileMenu.classList.add('active');
+    });
+
+    mobileMenuClose.addEventListener('click', function() {
+        mobileMenu.classList.remove('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+        });
     });
 
     // Smooth scrolling for navigation links
@@ -19,19 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-
-    // Features image slider
-    const featuresContainer = document.querySelector('.features-image');
-    const images = featuresContainer.querySelectorAll('img');
-    let currentIndex = 0;
-
-    function showNextImage() {
-        images[currentIndex].style.display = 'none';
-        currentIndex = (currentIndex + 1) % images.length;
-        images[currentIndex].style.display = 'block';
-    }
-
-    setInterval(showNextImage, 3000);
 
     // Load more functionality for recommendations
     const loadMoreBtn = document.querySelector('.loadmore p');
@@ -73,36 +90,38 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // House type dropdown
+    // House type and Price range dropdowns
     const houseTypeFilter = document.querySelector('.house-filter:first-child');
-    const houseTypeDropdown = document.createElement('select');
-    houseTypeDropdown.innerHTML = `
-        <option value="">Select House Type</option>
-        <option value="apartment">Apartment</option>
-        <option value="house">House</option>
-        <option value="duplex">Duplex</option>
-        <option value="bungalow">Bungalow</option>
-        <option value="mansion">Mansion</option>
-    `;
-    houseTypeFilter.appendChild(houseTypeDropdown);
+    const priceRangeFilter = document.querySelector('.house-filter:last-child');
+
+    function createDropdown(container, options, placeholder) {
+        const dropdown = document.createElement('select');
+        dropdown.innerHTML = `<option value="">${placeholder}</option>` +
+            options.map(option => `<option value="${option.value}">${option.label}</option>`).join('');
+        container.appendChild(dropdown);
+        return dropdown;
+    }
+
+    const houseTypeDropdown = createDropdown(houseTypeFilter, [
+        {value: 'apartment', label: 'Apartment'},
+        {value: 'house', label: 'House'},
+        {value: 'duplex', label: 'Duplex'},
+        {value: 'bungalow', label: 'Bungalow'},
+        {value: 'mansion', label: 'Mansion'}
+    ], 'Select House Type');
+
+    const priceRangeDropdown = createDropdown(priceRangeFilter, [
+        {value: '0-1000000', label: '₦0 - ₦1,000,000'},
+        {value: '1000001-5000000', label: '₦1,000,001 - ₦5,000,000'},
+        {value: '5000001-10000000', label: '₦5,000,001 - ₦10,000,000'},
+        {value: '10000001-50000000', label: '₦10,000,001 - ₦50,000,000'},
+        {value: '50000001+', label: '₦50,000,001+'}
+    ], 'Select Price Range');
 
     houseTypeDropdown.addEventListener('change', function() {
         console.log(`Filtered by house type: ${this.value}`);
         // Implement actual filtering logic here
     });
-
-    // Price range dropdown
-    const priceRangeFilter = document.querySelector('.house-filter:last-child');
-    const priceRangeDropdown = document.createElement('select');
-    priceRangeDropdown.innerHTML = `
-        <option value="">Select Price Range</option>
-        <option value="0-1000000">₦0 - ₦1,000,000</option>
-        <option value="1000001-5000000">₦1,000,001 - ₦5,000,000</option>
-        <option value="5000001-10000000">₦5,000,001 - ₦10,000,000</option>
-        <option value="10000001-50000000">₦10,000,001 - ₦50,000,000</option>
-        <option value="50000001+">₦50,000,001+</option>
-    `;
-    priceRangeFilter.appendChild(priceRangeDropdown);
 
     priceRangeDropdown.addEventListener('change', function() {
         console.log(`Filtered by price range: ${this.value}`);
