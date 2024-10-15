@@ -49,3 +49,16 @@ document.addEventListener('DOMContentLoaded', function() {
 		alert(`Thank you for your question!\nEmail: ${email}\nQuestion: ${question}`);
 	});
 });
+
+
+
+
+// Load more 
+document.getElementById('loadMoreBtn').addEventListener('click', function() {
+    var contentDiv = document.getElementById('content');
+
+    // Dynamically create and append new content
+    var newParagraph = document.createElement('p');
+    newParagraph.textContent = "New content loaded!";
+    contentDiv.appendChild(newParagraph);
+});

@@ -38,10 +38,12 @@
                     <h1>Homify Helping to Find <br> the Dream Home.</h1>
                     <p>Homify is here to find the best house for you,<br> whether for sale or rent, with reliable sources.</p>
                     <div class="hero-buttoncontainer">
-                        <button class="hero-button">Find a House.</button>
-                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <button class="hero-button"><a href="#recommendation">Find a House</a></button>
+                        <a href="#recommendation">
+                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M18.3334 34.8333C17.905 34.8342 17.4899 34.685 17.1601 34.4117C16.9744 34.2578 16.821 34.0687 16.7085 33.8554C16.596 33.6421 16.5267 33.4087 16.5046 33.1686C16.4824 32.9285 16.5079 32.6864 16.5795 32.4561C16.651 32.2258 16.7673 32.0119 16.9217 31.8267L25.1351 22L17.2151 12.155C17.0628 11.9675 16.949 11.7517 16.8804 11.5201C16.8118 11.2885 16.7896 11.0456 16.8152 10.8053C16.8407 10.5651 16.9135 10.3323 17.0293 10.1203C17.1451 9.90832 17.3017 9.72129 17.4901 9.57C17.6797 9.4031 17.9019 9.27721 18.1425 9.20023C18.3832 9.12325 18.6371 9.09685 18.8885 9.12267C19.1398 9.14849 19.3831 9.22598 19.6031 9.35029C19.823 9.47459 20.0149 9.64302 20.1667 9.845L29.0217 20.845C29.2914 21.173 29.4388 21.5845 29.4388 22.0092C29.4388 22.4338 29.2914 22.8453 29.0217 23.1733L19.8551 34.1733C19.6711 34.3952 19.4375 34.5706 19.1731 34.6853C18.9087 34.7999 18.621 34.8507 18.3334 34.8333Z" fill="white"/>
-                        </svg>  
+                            </svg>
+                        </a> 
                     </div>
                 </div>
             </div>
@@ -89,15 +91,15 @@
             </div>
             <div class="navigate-third">
                 <div class="navigate-options">
-                    <p>Sell</p>
-                    <p>Rent</p>
-                    <p>New Property</p>
+                    <p class="sell"><a href="#">Sell</a></p>
+                    <p class="rent"><a href="#">Rent</a></p>
+                    <p class="new-property"><a href="#">New Property</a></p>
                 </div> 
             </div>
         </div>
 
         <!-- Recommendations-->
-        <div class="homify-recommendation" id="features">
+        <div class="homify-recommendation" id="recommendation">
             <div class="recommendation-container">
                 <h2>House Recommendations for You</h2>
                 <div class="recommendation-searchcontaiiner">
@@ -111,16 +113,14 @@
                             <p>House Type</p>
                             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3.24995 3.90002L6.49995 7.15002L9.74995 3.90002L11.05 4.55002L6.49995 9.10002L1.94995 4.55002L3.24995 3.90002Z" fill="#00985B"/>
-                                </svg>
-                                
+                            </svg>
                         </div>
                         <div class="house-filter">
                             <img src="./assets/price-range.png" alt="house-icon" />
                             <p>Price Range</p>
                             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3.24995 3.90002L6.49995 7.15002L9.74995 3.90002L11.05 4.55002L6.49995 9.10002L1.94995 4.55002L3.24995 3.90002Z" fill="#00985B"/>
-                                </svg>
-                                
+                            </svg>   
                         </div>
                     </div>
                 </div>
@@ -320,13 +320,12 @@
                     </div>
                 </div>
                 <div class="loadmore">
-                    
                     <p>Load More...</p>
                 </div>
             </div>
 
             <!-- House Feature -->
-            <div class="features-container">
+            <div class="features-container" id="features">
                 <div class="features-header">
                     <h3> House Features</h3>
                     <button>View All..</button>
