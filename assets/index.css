@@ -393,7 +393,7 @@ color: #fff;
 .recommendation-search > button { 
     background-color: #00985B;
     /* color: #FFFFFF; */
-    height: 32px;
+    height: 33px;
     border: 0;
     border: 1px solid #434242;
     border-radius: 0 2px 2px 0;
@@ -547,7 +547,6 @@ margin: 50px 0;
     flex-direction: column;
     background: #F3FFF4;
     gap: 50px;
-
 }
 
 .features-header {
@@ -555,7 +554,6 @@ margin: 50px 0;
     justify-content: space-between;
     padding: 0 50px;
 }
-
 .features-header > h3 {
     font-family: Poppins;
     font-size: 48px;
@@ -564,7 +562,6 @@ margin: 50px 0;
     text-align: center;
     color: #048853;
 }
-
 .features-header > button {
     font-family: Poppins;
     font-size: 15px;
@@ -577,7 +574,6 @@ margin: 50px 0;
     background: #00985B;
     border: 0;
     border-radius: 15px;
-
 }
 
 .features-image {
@@ -587,18 +583,19 @@ margin: 50px 0;
     align-items: center;
     margin-bottom: 50px;
 }
-
 .features-image > img {
     width: auto;
     height: 400px;
 }
 
+
+
+/* ----- contact -----*/
 .contact-container{
     background: url(./contact-background.png);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
-
 }
 
 .contact-darkbackground {
@@ -609,15 +606,12 @@ margin: 50px 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 40px 20px;
-   
 }
 
 .first-contact {
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column; 
 }
-
 .first-contact > h4 {
     font-family: Poppins;
 font-size: 40px;
@@ -625,7 +619,6 @@ font-weight: 600;
 line-height: 50px;
 text-align: left;
 margin-bottom: 20px;
-
 }
 
 .contact-details {
@@ -639,21 +632,17 @@ font-size: 18px;
 font-weight: 600;
 line-height: 27px;
 text-align: left;
-
 }
 
 .contact-info {
     display: flex;
     align-items: center;
     gap: 5px;
-
 }
-
 .contact-info > img {
     width: auto;
     height: 10px;
 }
-
 .contact-info > p {
     font-family: Poppins;
 font-size: 16px;
@@ -668,22 +657,26 @@ text-align: left;
     gap: 20px;
     align-items: center;
 }
-
 .contact-image > img {
     width: auto;
     height: 20px;
 }
-
-.contact-image > img:hover {
+/* .contact-image > img:hover {
     opacity: 0.7;
     cursor: pointer;
+    color:#0ee68f;
+} */
+.contact-image > a:hover {
+    opacity: 0.7;
+    cursor: pointer;
+    filter: brightness(0) saturate(100%) invert(79%) sepia(27%) saturate(2893%) hue-rotate(88deg) brightness(105%) contrast(93%);
 }
+
 
 .contact-questions {
     background-color: #fff;
     padding: 25px;
 }
-
 .contact-questions > h3 {
     font-family: Poppins;
     font-size: 40px;
@@ -697,7 +690,6 @@ text-align: left;
     display: flex;
     flex-direction: column;
 }
-
 .contact-form > input {
     width: 100%;
     height: 100px;
@@ -705,10 +697,8 @@ text-align: left;
     background: #C4C4C4;
     font-size: 16px;
     font-weight: 400;
-
-
+    border-radius: 3px;
 }
-
 .contact-form > button {
     width: 100%;
     height: 100px;
@@ -719,10 +709,11 @@ text-align: left;
     line-height: 36px;
     text-align: center;
     color: #fff;
-
-
 }
 
+
+
+/* ----- Footer ----- */
 .footer{
     display: flex;
     justify-content: space-between;
@@ -730,13 +721,16 @@ text-align: left;
     padding: 20px 40px;
     color: #fff;
 }
-
 .first-footer{
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: #000;
     gap: 20px;
+}
+.footer > img{
+    width: auto;
+    height: 20px;
 }
 
 .homify-nav > ul,  .footer-nav ul{
@@ -747,8 +741,91 @@ text-align: left;
     list-style-type: none;
 }
 
-.footer > img{
-    width: auto;
-    height: 20px;
+
+
+/*Mobile Responsiveness*/
+@media screen and (max-width: 768px) {
+    .homify-nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .first-nav, .second-nav {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .homify-herosection {
+        padding: 40px 20px;
+        height: auto;
+        background-position: center;
+    }
+
+    .homify-herosection > h1 {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    .homify-herosection > p {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .services-cardcontainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services-card, .services-card2 {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .navigate-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recommendation-searchcontaiiner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recommendation-search {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .recommendation-filter {
+        justify-content: center;
+    }
+
+    .recommendation-secondcontainer {
+        grid-template-columns: 1fr;
+    }
+
+    .features-image {
+        flex-direction: column;
+    }
+
+    .features-image > img {
+        width: 90%;
+        height: auto;
+    }
+
+    .contact-darkbackground {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .first-footer {
+        flex-direction: column;
+    }
 }
 

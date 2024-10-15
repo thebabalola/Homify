@@ -328,10 +328,10 @@
             <div class="features-container" id="features">
                 <div class="features-header">
                     <h3> House Features</h3>
-                    <button>View All..</button>
+                    <button id="viewAllBtn">View All..</button>
                 </div>
                 <div class="features-image">
-                    <svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class ="arrow left-arrow" width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="30.5" cy="30.5" r="30.5" fill="#00985B"/>
                         <path d="M35.8714 44.5016C36.3679 44.5025 36.849 44.3314 37.2313 44.0179C37.4465 43.8414 37.6243 43.6246 37.7547 43.3799C37.8851 43.1352 37.9654 42.8675 37.991 42.5921C38.0167 42.3167 37.9872 42.039 37.9042 41.7748C37.8213 41.5107 37.6865 41.2654 37.5075 41.0529L27.9881 29.7815L37.1676 18.4891C37.3441 18.2741 37.4759 18.0266 37.5554 17.7609C37.6349 17.4952 37.6606 17.2166 37.631 16.9411C37.6014 16.6655 37.5171 16.3985 37.3828 16.1553C37.2486 15.9122 37.0671 15.6976 36.8488 15.5241C36.629 15.3327 36.3715 15.1883 36.0926 15.1C35.8137 15.0117 35.5193 14.9814 35.228 15.011C34.9367 15.0406 34.6548 15.1295 34.3998 15.2721C34.1449 15.4147 33.9224 15.6079 33.7465 15.8395L23.4834 28.4567C23.1709 28.833 23 29.305 23 29.792C23 30.2791 23.1709 30.7511 23.4834 31.1274L34.1077 43.7445C34.3209 43.999 34.5917 44.2002 34.8981 44.3317C35.2045 44.4632 35.538 44.5214 35.8714 44.5016Z" fill="white"/>
                     </svg>
@@ -343,7 +343,7 @@
                     <svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="30.5" cy="30.5" r="30.5" transform="matrix(-1 0 0 1 61 0)" fill="#00985B"/>
                         <path d="M25.1286 44.4852C24.6321 44.4862 24.151 44.315 23.7687 44.0016C23.5535 43.825 23.3757 43.6082 23.2453 43.3635C23.1149 43.1189 23.0346 42.8512 23.009 42.5758C22.9833 42.3003 23.0128 42.0226 23.0958 41.7585C23.1787 41.4943 23.3135 41.249 23.4925 41.0365L33.0119 29.7652L23.8324 18.4728C23.6559 18.2577 23.5241 18.0102 23.4446 17.7445C23.3651 17.4788 23.3394 17.2002 23.369 16.9247C23.3986 16.6492 23.4829 16.3821 23.6172 16.139C23.7514 15.8958 23.9329 15.6813 24.1512 15.5078C24.371 15.3163 24.6285 15.1719 24.9074 15.0836C25.1863 14.9953 25.4807 14.965 25.772 14.9947C26.0633 15.0243 26.3452 15.1132 26.6002 15.2557C26.8551 15.3983 27.0776 15.5915 27.2535 15.8232L37.5166 28.4404C37.8291 28.8166 38 29.2886 38 29.7757C38 30.2628 37.8291 30.7347 37.5166 31.111L26.8923 43.7282C26.6791 43.9827 26.4083 44.1838 26.1019 44.3154C25.7955 44.4469 25.462 44.5051 25.1286 44.4852Z" fill="white"/>
-                        </svg>
+                    </svg>
                         
                  
                 </div>
@@ -359,29 +359,30 @@
                         <h5>Contact</h5>
                         <div class="contact-info">
                             <img src="./assets/address-icon.png" alt="" />
-                            <p>4th Avenue, Kasumu Street, Ikeja, Lagos</p>
+                            <a href=""><p>4th Avenue, Kasumu Street, Ikeja, Lagos</p></a>
                         </div>
                         <div class="contact-info">
                             <img src="./assets/telephone-icon.png" alt="" />
-                            <p>022-6545-2041</p>
+                            <a href=""><p>022-6545-2041</p></a>
                         </div>
                         <div class="contact-info">
                             <img src="./assets/email-icon.png" alt="" />
-                            <p>osimesimon@gmail.com</p>
+                            <a href=""><p>osimesimon@gmail.com</p></a>
                         </div>
                     </div>
                     <div class="contact-image">
-                        <img src="./assets/facebook-icon.png" />
-                        <img src="./assets/twitter-icon.png" />
-                        <img src="./assets/instagram-icon.png" />
-                        <p>Homify</p>
+                        <a href=""><img src="./assets/facebook-icon.png" /></a>
+                        <a href=""><img src="./assets/twitter-icon.png" /></a>
+                        <a href=""><img src="./assets/instagram-icon.png" /></a>
+                        <a href=""><p>Homify</p></a>
                     </div>
                 </div>
+                
                 <div class="contact-questions">
                     <h3>Any questions..?</h3>
                     <form class="contact-form">
-                        <input placeholder="Enter your email here..." />
-                        <input placeholder="Your question.." />
+                        <input type="email" placeholder="Enter your email here..." required/>
+                        <input type="text" rows="4" placeholder="Your question.." required/>
                         <button type="submit">Send</button>
                     </form>
                 </div>
