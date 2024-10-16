@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenu.classList.remove('active');
     });
 
+
     // Close mobile menu when clicking on a link
     mobileMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', function() {
