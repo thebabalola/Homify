@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function stopAutoScroll() {
         clearInterval(scrollInterval);
+		
     }
 
     if (window.innerWidth <= 768) {

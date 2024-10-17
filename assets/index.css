@@ -766,7 +766,59 @@ text-align: left;
 
 
 /* Mobile Responsive Styles */
-@media screen and (min-width:320px) and (max-width:768px),(max-width: 768px),(max-width: 1048px), (orientation: portrait) {
+@media screen and (min-width: 320px) and (max-width: 768px), 
+screen and (max-width: 768px) and (orientation: landscape) {
+
+/* Mobile Menu Styles */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background-color: #048853;
+    z-index: 1000;
+    transition: right 0.3s ease-in-out;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu-close {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.mobile-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu li {
+    margin: 20px 0;
+}
+
+.mobile-menu a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.mobile-menu .second-nav {
+    margin-top: auto;
+}
+
     /* Hero Section */
     .homify-herosection {
         padding: 60px 20px;
@@ -839,7 +891,16 @@ text-align: left;
 
     .recommendation-card {
         width: 90%;
+        width: auto;
+        height: auto;
+        justify-content: center;
+        align-items: center;
         margin-bottom: 20px;
+    }
+
+    .recommendation-carddetails{
+        justify-content: center;
+        align-items: center;
     }
 
 
@@ -884,7 +945,7 @@ text-align: left;
 
     /* Contact Section */
     .contact-container {
-        margin-top: 30px; /* Reduce gap between features and contact section */
+        margin-top: 30px;
     }
 
     .contact-darkbackground {
@@ -953,54 +1014,4 @@ text-align: left;
     .footer > p {
         margin-top: 10px;
     }
-}
-
-/* Mobile Menu Styles */
-.mobile-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    height: 100vh;
-    background-color: #048853;
-    z-index: 1000;
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.mobile-menu.active {
-    right: 0;
-}
-
-.mobile-menu-close {
-    align-self: flex-end;
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: #fff;
-    cursor: pointer;
-}
-
-.mobile-menu ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.mobile-menu li {
-    margin: 20px 0;
-}
-
-.mobile-menu a {
-    color: #fff;
-    font-size: 18px;
-    text-decoration: none;
-}
-
-.mobile-menu .second-nav {
-    margin-top: auto;
 }
