@@ -1,29 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const navBar = document.querySelector('.homify-nav');
-    const mobileMenuBtn = document.createElement('button');
-    mobileMenuBtn.innerHTML = '☰';
-    mobileMenuBtn.classList.add('mobile-menu-btn');
-    navBar.prepend(mobileMenuBtn);
-
-    const mobileMenu = document.createElement('div');
-    mobileMenu.classList.add('mobile-menu');
-    mobileMenu.innerHTML = `
-        <button class="mobile-menu-close">✕</button>
-        <ul>
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#services">SERVICES</a></li>
-            <li><a href="#features">FEATURES</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-        </ul>
-        <ul class="second-nav">
-            <li class="reg"><a href="./register/register.html">REGISTER</a></li>
-            <li class="login"><a href="./login-signup/login.html">LOGIN</a></li>
-        </ul>
-    `;
-    document.body.appendChild(mobileMenu);
-
-    const mobileMenuClose = mobileMenu.querySelector('.mobile-menu-close');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
 
     mobileMenuBtn.addEventListener('click', function() {
         mobileMenu.classList.add('active');
@@ -32,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileMenuClose.addEventListener('click', function() {
         mobileMenu.classList.remove('active');
     });
-
 
     // Close mobile menu when clicking on a link
     mobileMenu.querySelectorAll('a').forEach(link => {
@@ -49,6 +28,60 @@ document.addEventListener('DOMContentLoaded', function() {
                 behavior: 'smooth'
             });
         });
+    });
+
+    // Automatic sliding for features images
+    const featuresContainer = document.querySelector('.features-image');
+    let scrollInterval;
+
+    function startAutoScroll() {
+        scrollInterval = setInterval(() => {
+            featuresContainer.scrollLeft += 1;
+            if (featuresContainer.scrollLeft >= featuresContainer.scrollWidth - featuresContainer.clientWidth) {
+                featuresContainer.scrollLeft = 0;
+            }
+        }, 30);
+    }
+
+    function stopAutoScroll() {
+        clearInterval(scrollInterval);
+    }
+
+    if (window.innerWidth <= 768) {
+        startAutoScroll();
+
+        featuresContainer.addEventListener('touchstart', stopAutoScroll);
+        featuresContainer.addEventListener('touchend', startAutoScroll);
+    }
+
+    // Manual sliding for features images
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    featuresContainer.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - featuresContainer.offsetLeft;
+        scrollLeft = featuresContainer.scrollLeft;
+        stopAutoScroll();
+    });
+
+    featuresContainer.addEventListener('mouseleave', () => {
+        isDown = false;
+        if (window.innerWidth <= 768) startAutoScroll();
+    });
+
+    featuresContainer.addEventListener('mouseup', () => {
+        isDown = false;
+        if (window.innerWidth <= 768) startAutoScroll();
+    });
+
+    featuresContainer.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - featuresContainer.offsetLeft;
+        const walk = (x - startX) * 2;
+        featuresContainer.scrollLeft = scrollLeft - walk;
     });
 
     // Load more functionality for recommendations
@@ -127,5 +160,38 @@ document.addEventListener('DOMContentLoaded', function() {
     priceRangeDropdown.addEventListener('change', function() {
         console.log(`Filtered by price range: ${this.value}`);
         // Implement actual filtering logic here
+    });
+
+    // Button pop effect
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            this.classList.add('button-pop');
+            setTimeout(() => {
+                this.classList.remove('button-pop');
+            }, 200);
+        });
+    });
+
+    // Navigation options active state
+    const navOptions = document.querySelectorAll('.navigate-options p');
+    navOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            navOptions.forEach(opt => opt.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    // House filter hover effect
+    const houseFilters = document.querySelectorAll('.house-filter');
+    houseFilters.forEach(filter => {
+        filter.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = '#00985B';
+            this.querySelector('p').style.color = '#FFFFFF';
+        });
+        filter.addEventListener('mouseleave', function() {
+            this.style.backgroundColor = '';
+            this.querySelector('p').style.color = '';
+        });
     });
 });
