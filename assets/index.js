@@ -1,24 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
-    const navBar = document.querySelector('.homify-nav');
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+	const menuIcon = document.getElementById('menu-icon');
+    const firstNav = document.querySelector('.first-nav');
+    const secondNav = document.querySelector('.second-nav');
 
-    mobileMenuBtn.addEventListener('click', function() {
-        mobileMenu.classList.add('active');
-    });
-
-    mobileMenuClose.addEventListener('click', function() {
-        mobileMenu.classList.remove('active');
-    });
+	menuIcon.addEventListener('click', () => {
+		firstNav.classList.toggle('active');
+		secondNav.classList.toggle('active');
+		menuIcon.classList.toggle('active');
+		console.log('Menu toggled!'); // Debugging
+	});
 
     // Close mobile menu when clicking on a link
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function() {
-            mobileMenu.classList.remove('active');
+    const navLinks = document.querySelectorAll('.first-nav a, .second-nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            firstNav.classList.remove('active');
+            secondNav.classList.remove('active');
+            menuIcon.classList.remove('active');
         });
     });
+
 
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
